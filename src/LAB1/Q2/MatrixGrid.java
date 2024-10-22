@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 public class MatrixGrid extends Application {
 
     @Override
-    public void start(Stage primaryStage)throws Exception{
+    public void start(Stage primaryStage){
         int matrixSize = 10;
 
         GridPane gridPane = new GridPane();
