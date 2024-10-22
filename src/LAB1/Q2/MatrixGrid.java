@@ -17,6 +17,8 @@ public class MatrixGrid extends Application {
 
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER);
+        gridPane.setVgap(2);
+        gridPane.setHgap(2);
         int[][] matrixGrid = new int[matrixSize][matrixSize];
         for (int i = 0; i < matrixSize; i++){
             for (int j = 0; j < matrixSize; j++){
@@ -27,7 +29,7 @@ public class MatrixGrid extends Application {
             for (int j = 0; j < matrixSize; j++) {
                 TextField textField = new TextField(String.valueOf(matrixGrid[i][j]));
                 textField.setAlignment(Pos.CENTER);
-                gridPane.add(textField, j, i);
+                gridPane.add(textField, i, j);
 
             }
         }
