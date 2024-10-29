@@ -40,8 +40,8 @@ public class MatrixGrid extends Application {
         }
 
         //Creating the scene
-        Scene scene1 = new Scene(gridPane);
-        primaryStage.setTitle("Lab 1 Question 2");
+        Scene scene1 = new Scene(gridPane, 328, 328);
+        primaryStage.setTitle("Exercise14_07");
 
         //Adding scene to stage
         primaryStage.setScene(scene1);
