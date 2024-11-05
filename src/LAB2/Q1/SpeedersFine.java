@@ -24,8 +24,8 @@ public class SpeedersFine extends Application {
     public void start(Stage stage){
         GridPane primaryGridPane = new GridPane();
         primaryGridPane.setAlignment(Pos.CENTER);
-        primaryGridPane.setVgap(30);
-        primaryGridPane.setHgap(30);
+        primaryGridPane.setVgap(15);
+        primaryGridPane.setHgap(10);
         primaryGridPane.setPadding(new Insets(30));
 
         //Vehicle type label
@@ -61,12 +61,15 @@ public class SpeedersFine extends Application {
         tfFine.setEditable(false);
 
         //Calculate Button
-        primaryGridPane.add(btCalculate, 1, 4);
         btCalculate.setPrefHeight(30);
         btCalculate.setPrefWidth(100);
+        HBox buttonBox = new HBox(btCalculate);
+        buttonBox.setAlignment(Pos.CENTER_RIGHT);
+        primaryGridPane.add(buttonBox, 1, 4);
+
 
         //Creating Scene
-        Scene scene1 = new Scene(primaryGridPane, 400, 328);
+        Scene scene1 = new Scene(primaryGridPane, 370, 250);
         stage.setTitle("Speeders Fine Calculator");
 
         //Execute Calculation =
@@ -87,13 +90,14 @@ public class SpeedersFine extends Application {
             switch (vehicleType){
                 case "Car" :
                     if (vehicleSpeed > speedLimit)
-                        tfFine.setText("RM" + (vehicleSpeed - speedLimit) * (vehicleSpeed - speedLimit) * 0.5);
+
+                        tfFine.setText("RM" + String.format("%.2f", (vehicleSpeed - speedLimit) * (vehicleSpeed - speedLimit) * 0.5));
                     else
                         tfFine.setText("No Fine Been Charged");
                     break;
                 case "Bike" :
                     if (vehicleSpeed > speedLimit)
-                        tfFine.setText("RM" + ((vehicleSpeed - speedLimit) + 30));
+                        tfFine.setText("RM" + String.format("%.2f", ((vehicleSpeed - speedLimit) + 30.0)));
                     else
                         tfFine.setText("No Fine Been Charged");
                     break;
