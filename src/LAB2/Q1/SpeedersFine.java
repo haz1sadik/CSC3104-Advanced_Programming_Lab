@@ -12,10 +12,10 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class SpeedersFine extends Application {
-    private TextField tfSpeed = new TextField();
-    private TextField tfSpeedLimit = new TextField();
-    private TextField tfFine = new TextField();
-    private Button btCalculate = new Button("Calculate");
+    private final TextField tfSpeed = createTextField("Enter vehicle speed");
+    private final TextField tfSpeedLimit = createTextField("Enter speed limit");
+    private final TextField tfFine = createTextField("Fine will be displayed here");
+    private final Button btCalculate = new Button("Calculate");
     public static void main(String[] args) {
         launch(args);
     }
@@ -29,9 +29,7 @@ public class SpeedersFine extends Application {
         primaryGridPane.setPadding(new Insets(30));
 
         //Vehicle type label
-        Label lblVehicleType = new Label("Vehicle Type : ");
-        lblVehicleType.setFont(Font.font("Arial", FontWeight.BOLD, 12));
-        primaryGridPane.add(lblVehicleType, 0, 0);
+        primaryGridPane.add(createLabel("Vehicle Type : "), 0, 0);
 
         //Radio button for vehicle type
         ToggleGroup toggleGroup = new ToggleGroup();
@@ -44,36 +42,21 @@ public class SpeedersFine extends Application {
         primaryGridPane.add(radioButtonsBox, 1, 0);
 
         //Vehicle Speed Label
-        Label lblSpeed = new Label("Vehicle Speed : ");
-        lblSpeed.setFont(Font.font("Arial", FontWeight.BOLD, 12));
-        primaryGridPane.add(lblSpeed, 0, 1);
+        primaryGridPane.add(createLabel("Vehicle Speed : "), 0, 1);
 
         //Vehicle Speed Input Field
-        tfSpeed.setPromptText("Enter vehicle speed");
-        tfSpeed.setPrefHeight(30);
-        tfSpeed.setPrefWidth(200);
         primaryGridPane.add(tfSpeed, 1, 1);
 
         //Speed Limit Label
-        Label lblSpeedLimit = new Label("Speed Limit : ");
-        lblSpeedLimit.setFont(Font.font("Arial", FontWeight.BOLD, 12));
-        primaryGridPane.add(lblSpeedLimit, 0, 2);
+        primaryGridPane.add(createLabel("Speed Limit : "), 0, 2);
 
         //Speed Limit Input Field
-        tfSpeedLimit.setPromptText("Enter speed limit");
-        tfSpeedLimit.setPrefHeight(30);
-        tfSpeedLimit.setPrefWidth(200);
         primaryGridPane.add(tfSpeedLimit, 1, 2);
 
         //Fine Label
-        Label lblFine = new Label("Total Fine : ");
-        lblFine.setFont(Font.font("Arial", FontWeight.BOLD, 12));
-        primaryGridPane.add(lblFine, 0, 3);
+        primaryGridPane.add(createLabel("Total Fine : "), 0, 3);
 
         //Fine Output Field
-        tfFine.setPromptText("Fine will be displayed here");
-        tfFine.setPrefHeight(30);
-        tfFine.setPrefWidth(200);
         primaryGridPane.add(tfFine, 1, 3);
         tfFine.setEditable(false);
 
@@ -132,5 +115,19 @@ public class SpeedersFine extends Application {
         contentLabel.setFont(Font.font("Arial", FontWeight.BOLD, 14));
         alert.getDialogPane().setContent(contentLabel);
         alert.showAndWait();
+        tfFine.setText("");
+    }
+    //Method to create label
+    private Label createLabel(String text) {
+        Label label = new Label(text);
+        label.setFont(Font.font("Arial", FontWeight.BOLD, 12));
+        return label;
+    }
+    //Method to create text field
+    private TextField createTextField(String promptText) {
+        TextField textField = new TextField();
+        textField.setPromptText(promptText);
+        textField.setPrefSize(200, 30);
+        return textField;
     }
 }
