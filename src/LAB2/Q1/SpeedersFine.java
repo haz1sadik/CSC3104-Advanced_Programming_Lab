@@ -10,7 +10,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-
 public class SpeedersFine extends Application {
     private final TextField tfSpeed = createTextField("Enter vehicle speed");
     private final TextField tfSpeedLimit = createTextField("Enter speed limit");
@@ -19,7 +18,6 @@ public class SpeedersFine extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
     @Override
     public void start(Stage stage){
         GridPane primaryGridPane = new GridPane();
@@ -72,7 +70,7 @@ public class SpeedersFine extends Application {
         Scene scene1 = new Scene(primaryGridPane, 370, 250);
         stage.setTitle("Speeders Fine Calculator");
 
-        //Execute Calculation =
+        //Execute Calculation when User Click Calculate Button
         btCalculate.setOnAction(e -> calcSpeedingFine(toggleGroup));
 
         stage.setScene(scene1);
