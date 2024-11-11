@@ -58,6 +58,8 @@ public class SpeedersFine extends Application {
         primaryGridPane.add(tfFine, 1, 3);
         tfFine.setEditable(false);
 
+
+
         //Calculate Button
         btCalculate.setPrefHeight(30);
         btCalculate.setPrefWidth(100);

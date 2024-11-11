@@ -1,4 +1,4 @@
-package PracticeQuestions.Lab1.Q1;
+package PracticeQuestions.Lab1;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -19,10 +19,10 @@ public class Q2 extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        VBox verticalBox = new VBox(2);
+        VBox verticalBox = new VBox(80);
         verticalBox.setAlignment(Pos.CENTER);
         verticalBox.setPadding(new Insets(15));
-        verticalBox.setSpacing(10);
+
 
         Label testText = new Label("= BMI Calculator =");
         testText.setFont(Font.font("Arial", FontWeight.BOLD, 20));
