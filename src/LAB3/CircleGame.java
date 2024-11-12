@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 import java.util.Random;
 
 public class CircleGame extends Application {
-    public static final int RADIUS = 30;
+    public static final int RADIUS = 10;
     public int clickCounter = 0;
 
     public static void main(String[] args) {
@@ -41,7 +41,7 @@ public class CircleGame extends Application {
         timeAndTitle.setFont(Font.font("Impact", FontWeight.BOLD, 30));
         mainPane.getChildren().add(timeAndTitle);
 
-        Image image = new Image("file:\\C:\\Users\\HazuanTech\\IdeaProjects\\CSC3104-AdvancedProgrammingLab\\src\\LAB3\\minion-congrats.gif");
+        Image image = new Image("file:\\C:\\Users\\User\\IdeaProjects\\CSC3104 - Advanced Programming Lab\\src\\LAB3\\minion-congrats.gif");
         ImageView congratsGif = new ImageView(image);
         congratsGif.setFitWidth(350);
         congratsGif.setPreserveRatio(true);
@@ -55,7 +55,7 @@ public class CircleGame extends Application {
         circle.setOnMouseClicked(e -> {
             circlePane.getChildren().clear();
             clickCounter++;
-            if (clickCounter < 3) {
+            if (clickCounter < 20) {
                 Circle newCircle = createCircle(circlePane);
                 newCircle.setOnMouseClicked(circle.getOnMouseClicked());
                 circlePane.getChildren().add(newCircle);
