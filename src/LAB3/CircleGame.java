@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 import java.util.Random;
 
 public class CircleGame extends Application {
-    public static final int RADIUS = 10;
+    public static final int RADIUS = 15;
     public int clickCounter = 0;
 
     public static void main(String[] args) {
@@ -75,6 +75,7 @@ public class CircleGame extends Application {
         primaryStage.show();
     }
 
+    //Method to create new circle
     public Circle createCircle(Pane circlePane) {
         Random randomNumberGenerator = new Random();
         double locationX = randomNumberGenerator.nextDouble() * (circlePane.getWidth() - 2 * RADIUS) + RADIUS;
