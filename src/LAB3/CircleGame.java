@@ -55,15 +55,22 @@ public class CircleGame extends Application {
 
         mainPane.getChildren().add(circlePane);
 
+        //start the timer
+        long startTime = System.currentTimeMillis();
+
+        Scene scene = new Scene(mainPane, 400, 400);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Exercise15_19");
+
+        primaryStage.show();
+
         //Creating the first circle to be at random position and color
-        double firstXLocation = randomNumberGenerator.nextDouble() * (400 - 2 * RADIUS);
-        double firstYLocation = randomNumberGenerator.nextDouble() * (300 - 2 * RADIUS);
+        double firstXLocation = randomNumberGenerator.nextDouble() * (circlePane.getWidth() - 2 * RADIUS) + RADIUS;
+        double firstYLocation = randomNumberGenerator.nextDouble() * (circlePane.getHeight() - 2 * RADIUS) + RADIUS;
         Circle circle = new Circle(firstXLocation, firstYLocation, RADIUS);
         circle.setFill(Color.color(randomNumberGenerator.nextDouble(), randomNumberGenerator.nextDouble(), randomNumberGenerator.nextDouble()));
         circlePane.getChildren().add(circle);
 
-        //start the timer
-        long startTime = System.currentTimeMillis();
         //On mouse click:
         circle.setOnMouseClicked(e -> {
             circlePane.getChildren().clear();
@@ -84,11 +91,6 @@ public class CircleGame extends Application {
                 primaryStage.setWidth(800);
             }
         });
-
-        Scene scene = new Scene(mainPane, 400, 400);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Exercise15_19");
-        primaryStage.show();
     }
 
     //Method to create new circle
