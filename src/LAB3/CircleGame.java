@@ -22,8 +22,6 @@ public class CircleGame extends Application {
     public static final int RADIUS = 15;
     public int clickCounter = 0;
     Random randomNumberGenerator = new Random();
-
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -65,12 +63,8 @@ public class CircleGame extends Application {
         primaryStage.show();
 
         //Creating the first circle to be at random position and color
-        double firstXLocation = randomNumberGenerator.nextDouble() * (circlePane.getWidth() - 2 * RADIUS) + RADIUS;
-        double firstYLocation = randomNumberGenerator.nextDouble() * (circlePane.getHeight() - 2 * RADIUS) + RADIUS;
-        Circle circle = new Circle(firstXLocation, firstYLocation, RADIUS);
-        circle.setFill(Color.color(randomNumberGenerator.nextDouble(), randomNumberGenerator.nextDouble(), randomNumberGenerator.nextDouble()));
+        Circle circle = createCircle(circlePane);
         circlePane.getChildren().add(circle);
-
         //On mouse click:
         circle.setOnMouseClicked(e -> {
             circlePane.getChildren().clear();
@@ -92,7 +86,6 @@ public class CircleGame extends Application {
             }
         });
     }
-
     //Method to create new circle
     public Circle createCircle(Pane circlePane) {
         //Creating circle at random position and color
