@@ -1,0 +1,11 @@
+connect 'jdbc:derby:javabook;create=true;user=scott;password=tiger';
+
+drop table Scores;
+create table Scores (name varchar(20),
+  score double, permission boolean);
+
+insert into Scores values ('John', 90.5, true);
+insert into Scores values ('Michael', 100, true);
+insert into Scores values ('Michelle', 100, false);
+
+commit;
