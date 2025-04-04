@@ -6,9 +6,12 @@ public class Test {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
+
         int matricNum;
         double firstTest, secondTest, A1, A2, A3, finalMark;
+
         double firstTestPercent, secondTestPercent,totalAssignment, totalAssignmentPercent, finalMarkPercent, totalPercent;
+
         System.out.print("Matric: ");
         matricNum = input.nextInt();
         System.out.print("1st Test: ");
